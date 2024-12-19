@@ -1,0 +1,157 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+/*body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f7f3f2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+}*/
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f7f3f2;
+    background-image: url('tunisia-background.jpg'); /* Ajoutez votre image ici */
+    background-size: cover;  /* L'image couvre toute la page */
+    background-position: center;  /* Centrer l'image */
+    background-attachment: fixed;  /* L'image reste fixe lors du défilement */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h1, h2 {
+    color: #b30000;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Button Container */
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+button {
+    padding: 15px 30px;
+    background-color: #e60000;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 15px rgba(230, 0, 0, 0.3);
+}
+
+button:hover {
+    background-color: #ff1a1a;
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(255, 26, 26, 0.5);
+}
+
+/* Form Container */
+.form-container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+    transition: transform 0.3s ease;
+}
+
+.form-container:hover {
+    transform: scale(1.02);
+}
+
+input, select {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px solid #b30000;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus {
+    border-color: #e60000;
+    outline: none;
+}
+
+button[type="submit"] {
+    background-color: #b30000;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+button[type="submit"]:hover {
+    background-color: #ff1a1a;
+    transform: translateY(-3px);
+}
+
+/* Footer */
+footer {
+    margin-top: 30px;
+    text-align: center;
+}
+
+footer a {
+    color: #e60000;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #ff1a1a;
+    text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1, h2, .form-container, .button-container {
+    animation: fadeIn 1s ease-out;
+}

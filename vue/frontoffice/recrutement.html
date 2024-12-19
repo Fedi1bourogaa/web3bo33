@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Recrutement des Guides - ELHADHRA</title>
+
+  <!-- CSS Files (Vérifiez bien les chemins) -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Section Recrutement des Guides -->
+  <section id="recrutement" class="section">
+    <div class="container section-title">
+      <h2>Recrutement des Guides</h2>
+      <p><span>Joignez notre équipe</span> <span class="description-title">Postulez maintenant</span></p>
+    </div>
+
+    <div class="container">
+      <form action="forms/recrutement.php" method="post" class="php-email-form">
+        <div class="row gy-4">
+          <div class="col-md-6">
+            <input type="text" name="name" class="form-control" placeholder="Votre Nom" required>
+          </div>
+          <div class="col-md-6">
+            <input type="email" class="form-control" name="email" placeholder="Votre Email" required>
+          </div>
+          <div class="col-md-6">
+            <input type="text" class="form-control" name="phone" placeholder="Votre Téléphone" required>
+          </div>
+          <div class="col-md-6">
+            <input type="text" class="form-control" name="experience" placeholder="Expérience de Guidage" required>
+          </div>
+          <div class="col-md-12">
+            <textarea class="form-control" name="message" rows="6" placeholder="Pourquoi voulez-vous nous rejoindre?" required></textarea>
+          </div>
+          <div class="col-md-12 text-center">
+            <button type="submit">Envoyer Candidature</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- JS Files (Vérifiez bien les chemins) -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

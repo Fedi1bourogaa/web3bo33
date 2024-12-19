@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>ELHADHRA</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Amatic+SC:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- AOS Animations CSS (Assurez-vous de l'avoir inclus dans votre projet) -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #262626;
+            background-color: #9eafbf;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Container styles */
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 1.5rem;
+        }
+
+        .map-container {
+            width: 300px;
+            /* Largeur de la carte */
+            height: 200px;
+            /* Hauteur de la carte */
+            margin-left: auto;
+            /* Centre horizontalement */
+            margin-right: auto;
+            /* Centre horizontalement */
+            display: block;
+            /* Pour s'assurer que l'élément est centré comme un bloc */
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+        }
+
+        .section-header h1 {
+            font-size: 2.5rem;
+            color: #333;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: #666;
+            font-style: italic;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .blog-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+        }
+
+        .blog-post,
+        .testimonial-form,
+        .comment-box {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            flex: 1 1 calc(50% - 1rem);
+        }
+
+        .blog-post img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .blog-post h2 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+        }
+
+        .blog-post p {
+            color: #555;
+            margin-bottom: 1rem;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+        }
+
+        .blog-post a,
+        .read-more a {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            color: #007bff;
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+
+        /* Testimonial and Comment Box Styling */
+        .testimonial-form h2,
+        .comment-box h2 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-form input,
+        .testimonial-form textarea,
+        .comment-box textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-form button,
+        .comment-box button {
+            padding: 0.6rem 1.2rem;
+            background-color: #b80e0e;
+            color: #fcfcfc;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+
+
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet">
+
+    <!-- =======================================================
+  * Template Name: Yummy
+  * Template URL: https://bootstrapmade.com/yummy-bootstrap-restaurant-website-template/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+    <header id="header" class="header d-flex align-items-center sticky-top">
+        <div class="container position-relative d-flex align-items-center justify-content-between">
+
+            <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+                <!-- Uncomment the line below if you also wish to use an image logo -->
+                <!-- <img src="assets/img/logo.png" alt=""> -->
+                <h1 class="sitename" style="color: red;">ELHADHRA</h1>
+                <span>.</span>
+            </a>
+
+            <nav id="navmenu" class="navmenu">
+                <ul>
+                    <li><a href="index.html">Home<br></a></li>
+                    <li><a href="about tunisia.html" class="active"><span>Tunisia</span> </a></li>
+                    <li><a href="#menu">Reservation</a></li>
+                    <li><a href="#events">Shop</a></li>
+                    <li><a href="#chefs">Donation</a></li>
+
+
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
+
+            <a class="btn-getstarted" href="index.html#book-a-table">GET STARTED</a>
+
+        </div>
+    </header>
+    <hr>
+    <section class="about section">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="section-header">
+                <h1 style="color: rgb(71, 96, 197);"><strong>"Culture and Heritage of Tunisia"</strong></h1>
+                <p>"Explore the essence of Tunisia: its history, traditions, and unique flavors."</p>
+                <p>Tunisia is a small country in North Africa, bordered by the Mediterranean Sea, Algeria, and Libya. It
+                    has a rich history, once home to the ancient Phoenician city-state of Carthage and influenced by
+                    Roman, Arab, Ottoman, and French cultures. Tunisia gained independence in 1956 and has since become
+                    a republic.
+
+                    The country boasts diverse landscapes, from Mediterranean beaches to the Sahara Desert, and a mild
+                    climate in the north. Tunisia is known for its historical sites, such as Carthage and Dougga, and
+                    its cuisine, featuring dishes like couscous and brik. The capital is Tunis, and the country plays an
+                    important role in the Arab world and North Africa.</p>
+            </div>
+
+            <hr>
+            <div class="blog-section">
+                <!-- Blog Post 1 -->
+                <div class="blog-post" data-aos="fade-up" data-aos-delay="100" id="medina">
+                    <h2 style="color: red;"> <strong>MEDINA OF TUNIS</strong> </h2>
+
+                    <div class="images-container">
+                        <table>
+                            <tr>
+                                <td><img src="assets/img/medina1.jpg" alt="La Médina de Tunis - Image 1"
+                                        style="width:500px;height:300px;"></br>
+                                    <p>Art and Craftsmanship Tunisian craftsmanship is a true reflection of the
+                                        country’s rich cultural and historical heritage. Berber rugs, known for their
+                                        geometric patterns and meticulous weaving, are portable works of art that tell
+                                        ancient stories.</br> Traditional pottery, often hand-decorated with floral or
+                                        geometric designs, is found in both Tunisian homes and international
+                                        markets.</br> The mosaics, particularly those from ancient Carthage and other
+                                        historical sites, showcase the technical and aesthetic excellence of Tunisian
+                                        art.</br> These works, along with other crafts such as embroidery, leatherwork,
+                                        and metalworking, continue to thrive in the souks and workshops, preserving
+                                        ancient know-how while adapting to modern trends.</p>
+                                </td>
+                                <td><img src="assets/img/medina2.jpg" alt="La Médina de Tunis - Image 2"
+                                        style="width:500px;height:300px;"></br>
+                                    <p>The Medina of Tunis is a UNESCO World Heritage site and a vibrant heart of the
+                                        capital,
+                                        offering visitors a fascinating journey through Tunisia's rich history.
+                                        Founded in the 7th century, it is a maze of narrow, winding streets, traditional
+                                        houses with colorful doors, and ancient monuments that reflect various periods
+                                        of cultural influence.</br> Within its walls, you’ll find historical sites like
+                                        the Zitouna Mosque, the heart of Islamic learning in Tunisia, and bustling souks
+                                        where artisans sell everything from perfumes to jewelry.</br> The Medina is a
+                                        place where the past meets the present, with its mix of traditional
+                                        craftsmanship, local markets, and modern life, making it a living testimony to
+                                        the country’s cultural heritage and hospitality.</p>
+                                </td>
+                            </tr>
+
+                        </table>
+
+                    </div>
+                    <div class="map-container" id="maps">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12779.334366053143!2d10.158557905106969!3d36.79854005595749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd3475f78af271%3A0x8f9049e7ed9a6b78!2sM%C3%A9dina%20de%20Tunis%2C%20Tunis!5e0!3m2!1sfr!2stn!4v1731495726330!5m2!1sfr!2stn"
+                            width="600" height="450" style="border:1;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+                <hr>
+                <div class="blog-section">
+                    <!-- Blog Post 2 -->
+                    <div class="blog-post" data-aos="fade-up" data-aos-delay="100" id="sidibousaid">
+                        <h2 style="color: red;"> <strong>SIDI BOU SAID</strong> </h2>
+
+                        <div class="images-container">
+                            <table>
+                                <tr>
+                                    <td><img src="C:\xampp\htdocs\projet\view\frontoffice\assets\img\sidibou1.jpg"
+                                            alt="La Médina de Tunis - Image 1" style="width:500px;height:300px;"></br>
+                                    </td>
+                                    <td><img src="C:\xampp\htdocs\projet\view\frontoffice\assets\img\sidibou2.jpg"
+                                            alt="La Médina de Tunis - Image 1" style="width:500px;height:300px;"></br>
+                                    </td>
+                                    <p>Sidi Bou Saïd is a picturesque coastal town located near Tunis, famous for
+                                        its stunning white-and-blue architecture and its breathtaking views of the
+                                        Mediterranean Sea. The town is named after the revered Sufi saint, Sidi Bou
+                                        Saïd, who is said to have brought spiritual enlightenment to the area in the
+                                        13th century. The charming streets are lined with traditional Tunisian
+                                        houses, where the doors and windows are painted in a striking shade of blue,
+                                        creating a unique and harmonious aesthetic. Sidi Bou Saïd has long been a
+                                        haven for artists, writers, and travelers seeking inspiration from its
+                                        tranquil atmosphere and natural beauty. The town’s narrow, winding streets
+                                        lead to the picturesque marina, while cafés and galleries offer visitors the
+                                        chance to relax and soak in the vibrant cultural scene. With its mix of
+                                        history, art, and stunning views, Sidi Bou Saïd remains a must-see
+                                        destination for those wanting to experience the soul of Tunisia.</p>
+
+                                </tr>
+
+                            </table>
+
+                        </div>
+                        <div class="map-container">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12767.141014919089!2d10.332813155166587!3d36.87155870562575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12e2b4995c30ee4d%3A0x674ff5794dd29!2sSidi%20Bou%20Sa%C3%AFd%2C%20Site%20arch%C3%A9ologique%20de%20Carthage!5e0!3m2!1sfr!2stn!4v1731496706229!5m2!1sfr!2stn"
+                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>"
+                        </div>
+                        <hr>
+                        <div class="blog-section">
+                            <!-- Blog Post 3 -->
+                            <div class="blog-post" data-aos="fade-up" data-aos-delay="100" id="eljem">
+                                <h2 style="color: red;"> <strong>EL JEM</strong> </h2>
+
+                                <div class="images-container">
+                                    <table>
+                                        <tr>
+                                            <p>El Jem is a small town in eastern Tunisia, renowned for its majestic
+                                                Roman amphitheater, the largest and best-preserved in North Africa.
+                                                Built in the 3rd century AD, the amphitheater of El Jem was capable
+                                                of seating up to 35,000 spectators, making it one of the largest in
+                                                the Roman Empire. This architectural marvel was designed for
+                                                gladiator fights and other grand spectacles, reflecting the
+                                                importance of the region within the empire. Constructed entirely of
+                                                stone blocks and lacking any foundational support, the amphitheater
+                                                is an impressive testament to Roman engineering and architectural
+                                                skill. Today, El Jem stands as a UNESCO World Heritage site, drawing
+                                                visitors from around the globe who come to marvel at its grandeur
+                                                and historical significance. The town itself, with its blend of
+                                                ancient Roman and Tunisian culture, offers a unique glimpse into
+                                                Tunisia’s rich past.</p>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="assets/img/ELJEM.jpg" alt="La Médina de Tunis - Image 1"
+                                                    style="width:500px;height:300px;">
+                                            <td><img src="assets/img/ELJEM2.JPG" alt="La Médina de Tunis - Image 1"
+                                                    style="width:500px;height:400px;"></br>
+                                            </td>
+                                        </tr>
+
+                                    </table>
+
+                                </div>
+                                <div class="map-container">
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26051.472862568407!2d10.685748780839395!3d35.295193503677964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1301fc8250fbd357%3A0x2ac18b0a4bde5c20!2sEl%20Jem!5e0!3m2!1sfr!2stn!4v1731518735082!5m2!1sfr!2stn"
+                                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
+                                <hr>
+                                <div class="blog-section">
+                                    <!-- Blog Post 4 -->
+                                    <div class="blog-post" data-aos="fade-up" data-aos-delay="100" id="tozeur">
+                                        <h2 style="color: red;"> <strong>TOZEUR</strong> </h2>
+
+                                        <div class="images-container">
+                                            <table>
+                                                <tr>
+                                                    <p>Tozeur is an oasis city in southwestern Tunisia, celebrated for
+                                                        its stunning desert landscapes, lush date palm groves, and
+                                                        distinct Saharan architecture. Known as the gateway to the
+                                                        Sahara, Tozeur is surrounded by a vast palm oasis that produces
+                                                        some of the finest dates in the world, including the famous
+                                                        deglet nour, or "date of light." The city’s architecture
+                                                        features unique brick patterns and earthy tones, giving it a
+                                                        timeless and authentic character that sets it apart from other
+                                                        Tunisian towns.
+
+                                                        Tozeur is also home to historical sites, such as the Medina,
+                                                        with its labyrinthine alleys and traditional souks, and the
+                                                        14th-century Sidi Bou Aïssa Mosque. Nearby attractions include
+                                                        the shimmering Chott el-Jerid salt flats and several picturesque
+                                                        mountain oases, like Chebika and Tamerza, which offer
+                                                        breathtaking views of waterfalls, rocky cliffs, and lush
+                                                        valleys. The area has also served as a backdrop for many films,
+                                                        including parts of the Star Wars series, adding to its allure
+                                                        for visitors and film enthusiasts alike.</p>
+                                                </tr>
+                                                <tr>
+                                                    <td><img src="assets/img/TOZEUR1.jpg"
+                                                            alt="La Médina de Tunis - Image 1"
+                                                            style="width:500px;height:300px;">
+                                                    <td><img src="assets/img/TOZEUR2.JPG"
+                                                            alt="La Médina de Tunis - Image 1"
+                                                            style="width:500px;height:300px;"></br>
+                                                    </td>
+                                                </tr>
+
+                                            </table>
+
+                                        </div>
+                                        <div class="map-container">
+                                            <iframe
+                                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52973.97552166036!2d8.041899341785292!3d33.91865595189307!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1257c028313d134d%3A0xc48c27f26a58203!2sTozeur!5e0!3m2!1sfr!2stn!4v1731519142803!5m2!1sfr!2stn"
+                                                width="600" height="450" style="border:0;" allowfullscreen=""
+                                                loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                                            </iframe>
+                                        </div>
+                                        <hr>
+                                        <div class="blog-section">
+                                            <!-- Blog Post 5 -->
+                                            <div class="blog-post" data-aos="fade-up" data-aos-delay="100"
+                                                id="aindrahem">
+                                                <h2 style="color: red;"> <strong>AIN DRAHEM</strong> </h2>
+
+                                                <div class="images-container">
+                                                    <table>
+                                                        <tr>
+                                                            <p>Aïn Draham is a picturesque town nestled in the lush,
+                                                                mountainous northwest region of Tunisia, known for its
+                                                                green hills, dense forests, and cool climate. Situated
+                                                                in the Kroumirie Mountains near the Algerian border, Aïn
+                                                                Draham is a popular destination for those seeking
+                                                                natural beauty, tranquility, and outdoor activities. The
+                                                                town is particularly famous for its cork oak forests,
+                                                                which cover the surrounding hills, making it one of
+                                                                Tunisia's greenest areas.
+
+                                                                In winter, Aïn Draham often experiences cooler
+                                                                temperatures and even snow, making it a unique spot in
+                                                                Tunisia where visitors can enjoy a different climate.
+                                                                The town’s charming architecture features red-tiled
+                                                                roofs, adding to its European-like appeal. Aïn Draham is
+                                                                also a starting point for hiking, trekking, and
+                                                                exploring nearby attractions, including scenic villages,
+                                                                springs, and ancient ruins. Known as a haven for nature
+                                                                lovers, this town provides a peaceful escape into
+                                                                Tunisia's diverse landscape.</p>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><img src="assets/img/AIN1.jpg"
+                                                                    alt="La Médina de Tunis - Image 1"
+                                                                    style="width:500px;height:300px;">
+                                                            <td><img src="C:\xampp\htdocs\projet\view\frontoffice\assets\img\AIN2.JPEG"
+                                                                    alt="La Médina de Tunis - Image 1"
+                                                                    style="width:500px;height:300px;"></br>
+                                                            </td>
+                                                        </tr>
+
+                                                    </table>
+
+                                                </div>
+                                                <div class="map-container">
+                                                    <iframe
+                                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12783.346430294383!2d8.675658705087347!3d36.774487006067375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fb3ae643c73ce5%3A0x54c417647b890cb1!2sAin%20Draham!5e0!3m2!1sfr!2stn!4v1731519548064!5m2!1sfr!2stn"
+                                                        width="600" height="450" style="border:0;" allowfullscreen=""
+                                                        loading="lazy"
+                                                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                                </div>
+                                                <hr>
+                                                <div class="blog-section">
+                                                    <!-- Blog Post 6 -->
+                                                    <div class="blog-post" data-aos="fade-up" data-aos-delay="100"
+                                                        id="kelibia">
+                                                        <h2 style="color: red;"> <strong>KELIBIA</strong>
+                                                        </h2>
+
+                                                        <div class="images-container">
+                                                            <table>
+                                                                <tr>
+                                                                    <p>Kélibia is a coastal town located on the
+                                                                        northeastern tip of Tunisia, famous for its
+                                                                        stunning beaches, historical sites, and vibrant
+                                                                        fishing port. Known for its pristine turquoise
+                                                                        waters and sandy shores, Kélibia attracts beach
+                                                                        lovers and visitors seeking relaxation along the
+                                                                        Mediterranean coast. One of its most iconic
+                                                                        landmarks is the Kélibia Fort (or Kélibia
+                                                                        Castle), a fortress dating back to the Punic and
+                                                                        Roman periods that stands on a hill overlooking
+                                                                        the sea. This well-preserved fort offers
+                                                                        panoramic views of the coastline and surrounding
+                                                                        countryside, making it a must-see for tourists.
+
+                                                                        Kélibia is also known for its wine production,
+                                                                        particularly Muscat wine, which has garnered
+                                                                        international recognition for its quality and
+                                                                        unique flavor. Each summer, the town hosts a
+                                                                        wine festival celebrating its winemaking
+                                                                        heritage. With its rich blend of history,
+                                                                        beautiful beaches, and cultural traditions,
+                                                                        Kélibia is a gem on Tunisia’s Cap Bon Peninsula,
+                                                                        offering a delightful experience for history
+                                                                        enthusiasts, beachgoers, and culinary lovers
+                                                                        alike..</p>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td><img src="C:\xampp\htdocs\projet\view\frontoffice\assets\img\KELIBIA.jpg"
+                                                                            alt="La Médina de Tunis - Image 1"
+                                                                            style="width:500px;height:300px;">
+                                                                    <td><img src="C:\xampp\htdocs\projet\view\frontoffice\assets\img\kélibia2.JPG"
+                                                                            alt="La Médina de Tunis - Image 1"
+                                                                            style="width:500px;height:300px;"></br>
+                                                                    </td>
+                                                                </tr>
+
+                                                            </table>
+
+                                                        </div>
+                                                        <hr>
+
+                                                        <div class="map-container">
+                                                            <iframe
+                                                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51089.57220780786!2d11.05512032383374!3d36.840122642032824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x131d338ce17b9879%3A0x351ce2ee2df67ff3!2zS8OpbGliaWE!5e0!3m2!1sfr!2stn!4v1731520245297!5m2!1sfr!2stn"
+                                                                width="600" height="450" style="border:0;"
+                                                                allowfullscreen="" loading="lazy"
+                                                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                                                        </div>
+                                                        <!-- Blog Post 7-->
+                                                        <div class="blog-post" data-aos="fade-up" data-aos-delay="200"
+                                                            id="TraditionalTunisianMusic">
+                                                            <h2 style="color: red;"><strong>Traditional
+                                                                    TUNISIEN MUSIC</strong> </h2>
+                                                            <div class="images-container">
+                                                                <table>
+                                                                    <tr>
+                                                                        <td><img src="assets/img/MUSIC1.jpg"
+                                                                                alt="La Médina de Tunis - Image 1"
+                                                                                style="width:500px;height:300px;"></br>
+                                                                        </td>
+                                                                        <td><img src="assets/img/MUSIC2.jpg"
+                                                                                alt="La Médina de Tunis - Image 2"
+                                                                                style="width:500px;height:300px;"></br>
+                                                                        </td>
+                                                                        <p>Traditional Tunisian music is deeply rooted
+                                                                            in the country's rich history, drawing
+                                                                            influences from Berber, Arab, and Andalusian
+                                                                            cultures. One of the most iconic styles is
+                                                                            the Malouf, a form of classical music
+                                                                            brought to Tunisia by Andalusian refugees in
+                                                                            the 15th century. Characterized by intricate
+                                                                            rhythms, poetic lyrics, and unique modes,
+                                                                            Malouf is often performed with traditional
+                                                                            instruments like the oud (lute), qanun
+                                                                            (zither), nay (flute), and darbouka (drum).
+
+                                                                            In addition to Malouf, various regional folk
+                                                                            styles express Tunisia's diverse cultural
+                                                                            landscape. The music of the south, for
+                                                                            example, often features rhythmic chants and
+                                                                            the use of the mezoued (a type of bagpipe)
+                                                                            and bendir (frame drum), reflecting Bedouin
+                                                                            and desert influences. The music of Tunisia
+                                                                            plays a central role in cultural
+                                                                            celebrations, festivals, and daily life,
+                                                                            preserving stories, values, and local
+                                                                            identities while evolving with modern sounds
+                                                                            and contemporary influences.
+                                                                        </p>
+
+                                                                    </tr>
+                                                                </table>
+
+                                                            </div>
+                                                            <hr>
+                                                            <!-- Blog Post 7-->
+                                                            <div class="blog-post" data-aos="fade-up"
+                                                                data-aos-delay="200" id="TraditionalTunisianFood">
+                                                                <h2 style="color: red;"><strong>Traditional
+                                                                        TUNISIEN FOOD</strong> </h2>
+                                                                <div class="images-container">
+                                                                    <p>Tunisian cuisine is a true blend of Mediterranean
+                                                                        and North African flavors, with local
+                                                                        ingredients like <strong>olives</strong>, garlic, and chili
+                                                                        peppers.<strong> Harissa</strong>, a spicy chili paste, is one of
+                                                                        the most popular condiments in Tunisia, used to
+                                                                        enhance soups, meats, or simply spread on bread.
+                                                                        <strong>Zit Zitoun, or olive oil</strong>, is a staple in
+                                                                        Tunisian cooking, often used in salads, fish
+                                                                        dishes, or alongside meals like couscous. This
+                                                                        locally produced oil is renowned for its high
+                                                                        quality and rich flavor. Traditional Tunisian
+                                                                        dishes, such as couscous or brik, are often
+                                                                        seasoned with local herbs and spices, creating a
+                                                                        perfect harmony of tastes that reflect the
+                                                                        country’s history and cultural diversity.</p>
+                                                                    <table>
+                                                                        <tr>
+                                                                            <p>Tunisian cuisine is a true fusion of
+                                                                                Mediterranean, Arab, Berber, and
+                                                                                Andalusian flavors, creating a range of
+                                                                                dishes rich in taste and color. This
+                                                                                unique blend of culinary influences
+                                                                                gives birth to flavorful and aromatic
+                                                                                meals that reflect the country’s
+                                                                                cultural diversity. Some of the most
+                                                                                iconic dishes of Tunisia include:
+                                                                            </p>
+                                                                            <hr>
+                                                                        </tr>
+
+                                                                        <tr>
+                                                                            <td>
+                                                                                <p>
+                                                                                    <strong>Couscous :</strong> This
+                                                                                    iconic dish is made with wheat
+                                                                                    semolina and accompanied by
+                                                                                    vegetables (carrots, zucchini,
+                                                                                    chickpeas) and meats (lamb, chicken,
+                                                                                    or fish depending on the region),
+                                                                                    all seasoned with fragrant spices.
+                                                                                    It is often served with a rich,
+                                                                                    spicy sauce and is one of the most
+                                                                                    beloved meals in Tunisia.
+                                                                                </p>
+                                                                            </td>
+                                                                            <td><img src="C:\xampp\htdocs\projet\view\frontoffice\assets\img\kosksi.jpg"
+                                                                                    alt="La Médina de Tunis - Image 1"
+                                                                                    style="width:400px;height:300px;"></br>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <p>
+                                                                                    <strong>Brik : </strong>A thin and
+                                                                                    crispy pastry, typically filled with
+                                                                                    tuna, egg, capers, and sometimes
+                                                                                    cheese or potatoes. This dish is
+                                                                                    often served as a starter,
+                                                                                    especially during the month of
+                                                                                    Ramadan.
+                                                                                </p>
+                                                                            </td>
+                                                                            <td><img src="C:\xampp\htdocs\projet\view\frontoffice\assets\img\brik.jpg"
+                                                                                    alt="La Médina de Tunis - Image 2"
+                                                                                    style="width:400px;height:300px;"></br>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <p>
+                                                                                    <strong> Tajine tunisien :</strong>
+                                                                                    Different from the Moroccan version,
+                                                                                    the Tunisian tajine is a kind of
+                                                                                    thick omelette made with eggs, meat
+                                                                                    (such as chicken or lamb),
+                                                                                    vegetables, spices, and sometimes
+                                                                                    cheese, all baked in the oven.
+                                                                                </p>
+                                                                            </td>
+                                                                            <td><img src="C:\xampp\htdocs\projet\view\frontoffice\assets\img\tajine.jpg"
+                                                                                    alt="La Médina de Tunis - Image 1"
+                                                                                    style="width:500px;height:300px;"></br>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <p>
+                                                                                    <strong> Lablabi :</strong>
+                                                                                    A comforting dish made with
+                                                                                    chickpeas served in a fragrant
+                                                                                    broth, seasoned with harissa,
+                                                                                    garlic, cumin, and topped with stale
+                                                                                    bread and olive oil.
+
+
+                                                                                </p>
+                                                                            </td>
+                                                                            <td><img src="C:\xampp\htdocs\projet\view\frontoffice\assets\img\lablebi.png"
+                                                                                    alt="La Médina de Tunis - Image 2"
+                                                                                    style="width:500px;height:300px;"></br>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <p>
+                                                                                    <strong> Ojja :</strong>
+                                                                                    A dish made with peppers, tomatoes,
+                                                                                    eggs, and merguez (spicy sausages),
+                                                                                    often spiced with harissa for a bold
+                                                                                    flavor.
+                                                                                </p>
+                                                                            </td>
+                                                                            <td><img src="C:\xampp\htdocs\projet\view\frontoffice\assets\img\3eja.jpeg"
+                                                                                    alt="La Médina de Tunis - Image 1"
+                                                                                    style="width:500px;height:300px;"></br>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <p>
+                                                                                    <strong> Kamounia :</strong>
+                                                                                    A meat stew (usually liver or beef)
+                                                                                    seasoned with cumin, which gives it
+                                                                                    its name, as well as other spices
+                                                                                    such as coriander and garlic.
+                                                                                </p>
+                                                                            </td>
+                                                                            <td><img src="C:\xampp\htdocs\projet\view\frontoffice\assets\img\kamounia.jpg"
+                                                                                    alt="La Médina de Tunis - Image 2"
+                                                                                    style="width:500px;height:300px;"></br>
+                                                                            </td>
+                                                                        </tr>
+
+                                                                    </table>
+
+                                                                </div>
+                                                                <hr>
+                                                                <!-- Formulaire de témoignage -->
+                                                                <div class="testimonial-form" data-aos="fade-up"
+                                                                    data-aos-delay="300">
+                                                                    <h2>Share your testimony :</h2>
+                                                                    <form action="#" method="post">
+                                                                        <label for="name"> Your Names :</label>
+                                                                        <input type="text" id="name" name="name"
+                                                                            required>
+
+                                                                        <label for="testimony">Your testimony
+                                                                            :</label>
+                                                                        <textarea id="testimony" name="testimony"
+                                                                            rows="4" required></textarea>
+
+                                                                        <button type="submit">SEND</button>
+                                                                    </form>
+                                                                </div>
+
+                                                                <!-- Boîte de commentaires -->
+                                                                <div class="comment-box" data-aos="fade-up"
+                                                                    data-aos-delay="400">
+                                                                    <h2>Coments</h2>
+                                                                    <form action="#" method="post">
+                                                                        <label for="comment">Add coments
+                                                                            :</label>
+                                                                        <textarea id="comment" name="comment" rows="3"
+                                                                            required></textarea>
+
+                                                                        <button type="submit">Comment</button>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                            <nav>
+                                                                <ul>
+                                                                    <li><a href="#medina">Medina</a></li>
+                                                                    <li><a href="#kelibia">Kélibia</a></li>
+                                                                    <li><a href="#sidibousaid">Sidi Bou Saïd</a></li>
+                                                                    <li><a href="#eljem">El Jem</a></li>
+                                                                    <li><a href="#aindrahem">Ain Drahem</a></li>
+                                                                    <li><a href="#tozeur">Tozeur</a></li>
+                                                                    <li><a href="#TraditionalTunisianMusic">Traditional
+                                                                            Tunisian Music</a></li>
+                                                                    <li><a href="#TraditionalTunisianFood">Traditional
+                                                                            Tunisian Food</a></li>
+                                                                </ul>
+                                                            </nav>
+    </section>
+
+    <!-- AOS Animations Script -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>
